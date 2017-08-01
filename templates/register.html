@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Mument</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </head>
+  <body>
+    <form>
+     <div class="input" >
+     full name  <input type="text" name="fullname"> <br><br>
+     user name  <input type="text" name="username"> <br><br>
+     email  <input type="text" name="email"> <br><br>
+     country <select>  <br><br>
+       <option>Israel</option>
+       <option>Palestine</option>
+       <option>USA</option>
+       </select> <br><br>
+     password  <input type="password" name="password">  <br><br>
+     <input type="submit" name="signup" value="sign up">
+     <input type="submit" name="hasuser" value="have a user already?">
+    </form>
+     </div>
+  </body>
+</html>
