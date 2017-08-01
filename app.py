@@ -125,7 +125,7 @@ def add(user_id, video_id):
         return render_template('add.html', user = user, video = video)
 
     #Adding the video with refrence to the old one
-    else
+    else:
         video         = request.form.get('video')
         description   = request.form.get('description')
         comment       = request.form.get('comment')
