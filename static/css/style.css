@@ -1,6 +1,7 @@
 
 body{
-	background-color:orange;
+
+	background-color: orange;
 }
 
 .input{
@@ -8,7 +9,30 @@ body{
 	text-align :center;
 }
 
-h1{
-	font-family: "Times New Roman", Times, serif;
-
+.smallnote {
+	position:absolute; 
+	margin-top:400px;
+	margin-left:100px;
 }
+
+.bignote {
+	position:absolute; 
+	margin-top:150px;
+	margin-left:50px;
+}
+
+.smallnote1 {
+	position:absolute; 
+	margin-top:300px;
+	margin-left:500px;
+}
+
+.bignote1 {
+	position:absolute; 
+	margin-top:50px;
+	margin-left:550px;
+}
+
+
+
+

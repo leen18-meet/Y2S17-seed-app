@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Login</title>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </head>
+  <body>
+      <form action = "/Home" method = "post">
+          <div class = "input">
+              Username: <input type = "text" name = "check_username"><br><br>
+              Password: <input type = "password" name = "check_password"><br><br>
+
+              <input type = "submit" name = "Sign In" value = "In">
+          </div>
+      </form>
+      <a href = {{url_for('register')}}><input type = "submit" name = "Sign Up" value = "Out">
+  </body>>
+</html>

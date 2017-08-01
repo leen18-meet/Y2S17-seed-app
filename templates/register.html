@@ -1,34 +1,67 @@
+
 <!DOCTYPE html>
 <html>
   <head>
       <title>Mument</title>
+
+
+
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
       <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
   </head>
   <body>
-   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/<img src="{{url_for('static', filename='img/mument_new.jpg')}}" alt="image" width="200" height="100">/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-    <form>
-     <div class="input" >
-     <br> <br> <br> <br>
-     <h1>SIGN UP!</h1> 
-     <br> <br> <br> <br>
+
+
+  <br><br><br><br><br><br>
+    <form action="{{ url_for('register') }}" method="post">
+    
+     <div class="input">
+
+     <div class="bignote">
+       <img src="../static/img/bignote.jpg.png" alt="note" style="width:40px;height:40px;""><br></div>
+
+      <div class="smallnote">
+      <img src="../static/img/smallnote.gif" alt="note" style="width:40px;height:40px;"> </div>
+
+      <div class="bignote1">
+       <img src="../static/img/bignote.jpg.png" alt="note" style="width:40px;height:40px;""><br></div>
+
+      <div class="smallnote1">
+      <img src="../static/img/smallnote.gif" alt="note" style="width:40px;height:40px;"> </div>
+
+
      full name  <input type="text" name="fullname"> <br><br>
+
      user name  <input type="text" name="username"> <br><br>
+
+     password  <input type="password" name="password">  <br><br>
+
      email  <input type="text" name="email"> <br><br>
-     country <select>  <br><br>
+
+     country <select>  
        <option>Israel</option>
        <option>Palestine</option>
        <option>USA</option>
        </select> <br><br>
-     password  <input type="password" name="password">  <br><br>
+
+       <h5>-musician-</h5>
+      <input type="checkbox" name="musician" value="singer"> singer<br>
+      <input type="checkbox" name="musician" value="guitarist" >guitarist<br>
+      <input type="checkbox" name="musician" value="drummerd"> drummerd<br>
+      <input type="checkbox" name="musician" value="violinist" > violinist<br>
+      <input type="checkbox" name="musician" value="non" > non<br>
+     
+     <br><br><br><br><br><br>
      <input type="submit" name="signup" value="sign up">
-     <input type="submit" name="hasuser" value="have a user already?">
-    </form>
+
+     
+    </form><br>
+    <a href="/login">Already have an account?</a>
      </div>
   </body>
 </html>
+
