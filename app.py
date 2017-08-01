@@ -14,7 +14,7 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/register', methods=['GET','POST'])
 def register():
     #If it's a simple get, return the wanted page.
     if request.method == 'GET':
