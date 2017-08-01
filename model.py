@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class User(Base):
     __tablename__ = 'User'
     id            = Column(Integer, primary_key=True)
@@ -27,6 +28,7 @@ class Video(Base):
     other_video   = Column(Integer, default = 0)
     rating        = Column(Integer, default = 0)
     owner         = Column(Integer, default = 0)
+
     # ADD YOUR FIELD BELOW ID
 
 class Comment(Base):

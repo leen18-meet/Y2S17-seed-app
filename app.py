@@ -2,7 +2,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 # SQLAlchemy
+<<<<<<< HEAD
 from model import Base, User, Video, Comment
+=======
+from model import Base, Users, Videos
+>>>>>>> 00e1585874f8ce761cc676151b2cb735d1f976b3
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -34,6 +38,7 @@ def register():
         flute         = request.form.get('flute')
 
         #If this username is already exists it will bring you back.
+
         if len(session.query(User).filter_by(username = username).all()) != 0:
             return redirect(url_for('register'))
         
@@ -55,6 +60,7 @@ def login():
     else:
         check_username      = request.form.get('check_username')
         check_password      = request.form.get('check_password')
+
 
         wanted_user         = session.query(User).filter_by(username = check_username).first()
 
@@ -96,6 +102,7 @@ def friends(user_id):
 def publish(user_id):
     videos = session.querry(Video).all()
     user = session.querry(User).filter_by(id = user_id).first()
+
     if request.method == 'GET':
         return render_template('publish.html', user = user)
 
@@ -103,6 +110,7 @@ def publish(user_id):
     else:
         video         = request.form.get('video')
         description   = request.form.get('description')
+
         rating        = request.form.get('rating')
         owner         = user_id
 
@@ -115,21 +123,25 @@ def publish(user_id):
 
             return redirect_url('home',user_id = user_id)
 
+
 @app.route('/Add/<int:user_id>/<int:video_id>', methods=['GET','POST'])
 def add(user_id, video_id):
 
     #Taking the old video ti present it to the user and also to mention the video last publisher to post it
     #Interactivly
+
     user = session.querry(User).filter_by(id = user_id).first()
     video = session.querry(Video).filter_by(id = video_id).first()
 
     if request.method == 'GET':
         return render_template('add.html', user_id = user_id, video_id = video_id)
 
+
     #Adding the video with refrence to the old one
     else:
         video         = request.form.get('video')
         description   = request.form.get('description')
+
         rating        = request.form.get('rating')
         owner         = user.id
 
@@ -141,6 +153,7 @@ def add(user_id, video_id):
         session.commit()
 
         return redirect_url('home',user_id = user_id)
+
 
 
                                                 ############
