@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html>
   <head>
       <title>Mument</title>
+
+
+
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
       <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
   </head>
   <body>
    /\/\/\/\/\/\/\/\/\/\/\/\/\/\/<img src="{{url_for('static', filename='img/mument_new.jpg')}}" alt="image" width="200" height="100">/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -16,6 +19,7 @@
    <br><br><br>
 
         <form action="{{ url_for('register') }}" method="post">
+
      <div class="input">
 
      <div class="bignote">
@@ -55,6 +59,7 @@
       <input type="checkbox" name="musician" value="violinist" > violinist<br>
       <input type="checkbox" name="musician" value="non" > non<br>
      
+
      <br><br><br>
      <input type="submit" name="signup" value="sign up">
 
