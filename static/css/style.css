@@ -1,14 +1,40 @@
 
 body{
-	background-color:orange;
+
+    background-color: orange;
 }
 
 .input{
-	
-	text-align :center;
+    
+    text-align :center;
 }
 
-h1{
-	font-family: "Times New Roman", Times, serif;
+.smallnote {
+    position:absolute; 
+    margin-top:400px;
+    margin-left:200px;
+}
 
+.bignote {
+    position:absolute; 
+    margin-top:150px;
+    margin-left:150px;
+}
+
+.smallnote1 {
+    position:absolute; 
+    margin-top:300px;
+    margin-left:1000px;
+}
+
+.bignote1 {
+    position:absolute; 
+    margin-top:50px;
+    margin-left:1050px;
+}
+
+.smallnote2 {
+    position:absolute; 
+    margin-top:35px;
+    margin-left:350px;
 }
