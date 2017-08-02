@@ -62,20 +62,20 @@ def login():
 
         #if it is correct continue to the homepage
         if wanted_user.password is check_password:
-            return redirect(url_for('home',user_id = wanted_user.id))
+            return redirect(url_for('homepage',user_id = wanted_user.id))
         #Ekse try again
         else:
             return redirect(url_for('login'))
 
-@app.route('/home/<int:user_id>')
-def home(user_id):
+@app.route('/homepage/<int:user_id>')
+def homepage(user_id):
 
     #Publishing on the feed all the videos and also saving the user (NOTE : there is a need?)
     user = session.querry(User).filter_by(id = user_id).first()
 
     videos = session.querry(Video).all()
 
-    return render_template('home.html', user = user, vidoes = videos)
+    return render_template('homepage.html', user = user, vidoes = videos)
 
 @app.route('/profile/<int:user_id>')
 def profile(user_id):
@@ -117,7 +117,7 @@ def publish(user_id):
             session.add(new_vid)
             session.commit()
 
-            return redirect_url('home',user_id = user_id)
+            return redirect_url('homepage',user_id = user_id)
 
 
 @app.route('/Add/<int:user_id>/<int:video_id>', methods=['GET','POST'])
@@ -148,7 +148,7 @@ def add(user_id, video_id):
         session.add(new_vid)
         session.commit()
 
-        return redirect_url('home',user_id = user_id)
+        return redirect_url('homepage',user_id = user_id)
 
 
 
