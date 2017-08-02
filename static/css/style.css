@@ -2,7 +2,7 @@
 body{
 
 
-    background-color: orange;
+    background-image: url("background-1622424.jpg")
 }
 
 .input{
@@ -39,4 +39,8 @@ body{
     position:absolute; 
     margin-top:35px;
     margin-left:350px;
+}
+
+h1 {
+ text-align: center; 
 }

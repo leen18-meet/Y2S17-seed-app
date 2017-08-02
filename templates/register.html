@@ -18,46 +18,31 @@
 
    <br><br><br>
 
-        <form action="{{ url_for('register') }}" method="post">
+        <form action="{{ url_for('register')}}" method="post">
 
      <div class="input">
 
-     <div class="bignote">
-       <img src="../static/img/bignote.jpg.png" alt="note" style="width:40px;height:40px;""><br></div>
 
-      <div class="smallnote">
-      <img src="../static/img/smallnote.gif" alt="note" style="width:40px;height:40px;"> </div>
+     <h4><mark><strong>full name  </strong></mark><input type="text" name="fullname"></h4> 
 
-      <div class="bignote1">
-       <img src="../static/img/bignote.jpg.png" alt="note" style="width:40px;height:40px;""><br></div>
+     <h4><mark><strong>user name </strong></mark> <input type="text" name="username"></h4>
 
-      <div class="smallnote1">
-      <img src="../static/img/smallnote.gif" alt="note" style="width:40px;height:40px;"> </div>
+     <h4><mark><strong>password </strong></mark> <input type="password" name="password"></h4>
 
-      <div class="smallnote2">
-      <img src="../static/img/smallnote.gif" alt="note" style="width:40px;height:40px;"> </div>
+     <h4><mark><strong>email</strong></mark>  <input type="text" name="email"></h4>
 
-
-     full name  <input type="text" name="fullname"> <br><br>
-
-     user name  <input type="text" name="username"> <br><br>
-
-     password  <input type="password" name="password">  <br><br>
-
-     email  <input type="text" name="email"> <br><br>
-
-     country <select>  
+     <h4><mark><strong>country</strong></mark> <select>  
        <option>Israel</option>
        <option>Palestine</option>
        <option>USA</option>
-       </select> <br><br>
+       </select> </h4>
 
-       <h5>-musician-</h5>
-      <input type="checkbox" name="musician" value="singer"> singer<br>
-      <input type="checkbox" name="musician" value="guitarist" >guitarist<br>
-      <input type="checkbox" name="musician" value="drummerd"> drummerd<br>
-      <input type="checkbox" name="musician" value="violinist" > violinist<br>
-      <input type="checkbox" name="musician" value="non" > non<br>
+       <h4><mark><strong><h5>-musician-</h5></strong></mark>
+      <input type="checkbox" name="musician" value="singer"><mark><strong> singer</strong></mark><br>
+      <input type="checkbox" name="musician" value="guitarist" ><mark><strong>guitarist</strong></mark><br>
+      <input type="checkbox" name="musician" value="drummerd"> <mark><strong>drummerd</strong></mark><br>
+      <input type="checkbox" name="musician" value="violinist" ><mark><strong>violinist</strong></mark></h4>
+      
      
 
      <br><br><br>
