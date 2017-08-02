@@ -80,16 +80,25 @@ def homepage(user_id):
 def profile(user_id):
 
     #Showing the whole videos of the current user and showing all the info about him.
-    user = session.querry(User).filter_by(id = user_id).first()
+    user = session.query(User).filter_by(id = user_id).first()
+    roles = []
+    if user.sing:
+        roles.append("Singer")
+    if user.guitar:
+        roles.append("Guitarist")
+    if user.drums:
+        roles.append("Drummer")
+    if user.flute:
+        roles.append("Flutist")
+    user_description = ','.join(roles)
+    videos = session.query(Video).filter_by(owner = user.name).all()
 
-    videos = session.querry(Video).filter_by(poster = user.name).all()
-
-    return render_template('profile.html', user = user, videos = videos)
+    return render_template('profile.html', user = user, videos = videos, desc= user_description)
 
 @app.route('/publish/<int:user_id>', methods=['GET','POST'])
 def publish(user_id):
-    videos = session.querry(Video).all()
-    user = session.querry(User).filter_by(id = user_id).first()
+    videos = session.query(Video).all()
+    user = session.query(User).filter_by(id = user_id).first()
 
     if request.method == 'GET':
         return render_template('publish.html', user = user)
@@ -118,8 +127,8 @@ def add(user_id, video_id):
     #Taking the old video ti present it to the user and also to mention the video last publisher to post it
     #Interactivly
 
-    user = session.querry(User).filter_by(id = user_id).first()
-    video = session.querry(Video).filter_by(id = video_id).first()
+    user = session.query(User).filter_by(id = user_id).first()
+    video = session.query(Video).filter_by(id = video_id).first()
 
     if request.method == 'GET':
         return render_template('add.html', user_id = user_id, video_id = video_id)
