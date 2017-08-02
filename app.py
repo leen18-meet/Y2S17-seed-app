@@ -74,7 +74,7 @@ def homepage(user_id):
 
     videos = session.query(Video).all()
 
-    return render_template('homepage.html', user = user, vidoes = videos)
+    return render_template('homepage.html', user_id = user.id, vidoes = videos)
 
 @app.route('/profile/<int:user_id>')
 def profile(user_id):

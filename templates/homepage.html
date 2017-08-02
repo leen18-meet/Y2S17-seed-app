@@ -11,28 +11,22 @@
   <body>
 
     <h1> MUMENT </h1>
-    
 
-    <form action="{{ url_for('homepage') }}"> 
+
+    <form action="{{ url_for('homepage', user_id = user_id) }}"> 
 
     <div class="buttons">
-      <button>Profile</button> <br><br
+      <button>Profile</button> <br><br>
       <button>log out</button> <br><br><br><br>    
       <button>publish</button> <br><br>
     </div>
 
-    <!-- qweoiwjefoij
-    {% for video in videos %}
-      {{video.video}}
-    {% endfor %}
-    qwefuqwefoij -->
-
     add the video link from the youtyube, after the = tag <input type = "text" name = "add video">
     <input type = "submit" name = "post_video" value = "post video"> 
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/----------" frameborder="0" allowfullscreen></iframe>
-
     </form>
+    {% for video in videos %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{  video.video }}" frameborder="0" allowfullscreen></iframe>
+    {% endfor %}
 
    </body>
 </html>
