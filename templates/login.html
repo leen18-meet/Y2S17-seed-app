@@ -10,7 +10,7 @@
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </head>
   <body>
-      <form action = url_for('login') method = "post">
+      <form action = {{url_for('login')}} method = "post">
       <br><br>
 
         <div class="bignote">
@@ -40,5 +40,5 @@
           </div>
       </form>
       
-  </body>>
+  </body>
 </html>
