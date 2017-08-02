@@ -57,13 +57,12 @@ def login():
         check_username      = request.form.get('check_username')
         check_password      = request.form.get('check_password')
 
-
         wanted_user         = session.query(User).filter_by(username = check_username).first()
 
         #if it is correct continue to the homepage
-        if wanted_user.password is check_password:
+        if wanted_user.password == check_password:
             return redirect(url_for('homepage',user_id = wanted_user.id))
-        #Ekse try again
+        #Else try again
         else:
             return redirect(url_for('login'))
 
@@ -71,9 +70,9 @@ def login():
 def homepage(user_id):
 
     #Publishing on the feed all the videos and also saving the user (NOTE : there is a need?)
-    user = session.querry(User).filter_by(id = user_id).first()
+    user = session.query(User).filter_by(id = user_id).first()
 
-    videos = session.querry(Video).all()
+    videos = session.query(Video).all()
 
     return render_template('homepage.html', user = user, vidoes = videos)
 
@@ -86,13 +85,6 @@ def profile(user_id):
     videos = session.querry(Video).filter_by(poster = user.name).all()
 
     return render_template('profile.html', user = user, videos = videos)
-
-@app.route('/friends/<int:user_id>')
-def friends(user_id):
-
-    #Showing the current user friend list
-    user = session.querry(User).filter_by(id = user_id).first()
-    return render_template('friends.html', user = user)
 
 @app.route('/publish/<int:user_id>', methods=['GET','POST'])
 def publish(user_id):
