@@ -27,12 +27,14 @@
        <img src="/static/img/LOGO.png" alt="logo" style="width:240px;height:240px;""><br></div>
      
 
-   <br><br><br><br><br><br>
+   <br><br>
 
         <form action="{{ url_for('register')}}" method="post">
 
      <div class="input">
 
+      <input type="checkbox" name="gender" value="boy"> <img src="/static/img/boy.png" alt="boy" style="width:80px;height:80px;"">
+      <input type="checkbox" name="gender" value="girl" checked> <img src="/static/img/girl.png" alt="girl" style="width:80px;height:80px;""><br><br>
 
      <h4><strong>full name  </strong><input type="text" name="fullname"></h4> 
 
@@ -58,11 +60,11 @@
 
 
      
-     <br><br><br>
+     <br><br>
      <input type="submit" name="signup" value="sign up">
 
      
-    </form><br><br><br>
+    </form><br>
     <a href="/login">Already have an account?</a>
 
     

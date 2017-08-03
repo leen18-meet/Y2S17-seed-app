@@ -17,6 +17,8 @@ class User(Base):
     guitar        = Column(Boolean, default = False)
     drums         = Column(Boolean, default = False)
     flute         = Column(Boolean, default = False)
+    boy           = Column(Boolean, default = False)
+    girl          = Column(Boolean, default = False)
     videos = relationship("Video", 
     back_populates="user")
     

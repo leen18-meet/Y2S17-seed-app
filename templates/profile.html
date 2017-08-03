@@ -11,16 +11,22 @@
   </head>
 
   <body>
-  /\/\/\/\/\/\/\/\/\/\/\/\/\/\/<img src="{{url_for('static', filename='img/mument_new.jpg')}}" alt="image" width="200" height="100">/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+    <div class="buttons">
+    <div class="imgname">
+       <img src="../static/img/name.png" alt="name" style="width:200px;height:35px;">
+       <br>
+    </div>
+    </div>
+
   <br>
-  <div class = "profile">
+  <div class = "profile"><h2><strong>
   Name: {{user.name}}
   <br>
   Instruments: {{desc}}
   <br> <br> <br>
    
   <a href="{{url_for('homepage', user_id=user.id)}}"><button>back</button></a>
-  </div>
+  </div></h2></strong>
   </body>
 </html>  
 

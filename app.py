@@ -32,6 +32,8 @@ def register():
         guitar        = request.form.get('guitar')
         drums         = request.form.get('drums')
         flute         = request.form.get('flute')
+        boy           = request.form.get('boy')
+        girl          = request.form.get('girl')
 
         #If this username is already exists it will bring you back.
 
@@ -40,7 +42,7 @@ def register():
         
         #If it's a new one create a new user and go to the "Login" page
         else:            
-            user = User(username = username, name = name, password = password, email = email, country = country, sing = sing, guitar = guitar, drums = drums, flute = flute)
+            user = User(username = username, name = name, password = password, email = email, country = country, sing = sing, guitar = guitar, drums = drums, flute = flute, boy = boy, girl = girl)
             session.add(user)
             session.commit()
 
@@ -94,6 +96,10 @@ def profile(user_id):
         roles.append("Drummer")
     if user.flute:
         roles.append("Flutist")
+    if user.boy:
+        roles.append("boy")
+    if user.girl:
+        roles.append("girl")
     user_description = ','.join(roles)
     videos = session.query(Video).filter_by(owner = user.name).all()
 

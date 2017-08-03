@@ -99,7 +99,7 @@ h1 {
 .logo{
     position: absolute;
     left: 80px;
-    top: 430px;
+    top: 380px;
 }
 
 div.videos {
@@ -132,6 +132,11 @@ div.videos {
     left: 300px;
     top: 200px;
     text-align: center;
+}
+
+.profile{
+    text-align: center;
+
 }
 
 
