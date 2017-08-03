@@ -29,16 +29,25 @@
 
       <div class="imgname">
        <img src="../static/img/name.png" alt="name" style="width:200px;height:35px;">
+       <br>
+       
+
       </div>
+
    
     </form>
-    
+     <strong>________________________________________________________________________________________________________________________________________________________________________</strong>
+
+    <br><br><br><br>
+
+    <div class="video_home">
+   
     {% for video in videos %}
-
-    Owner: {{owners[video.video]}}
-    <br>
-    Description: {{video.description}}
-
+     <div class="video_desc"> 
+    Owner: <br> {{owners[video.video]}}
+    
+    Description:  {{video.description}}
+    </div>
     <div class ="videos">
 
     <iframe width="300" height="300" src="{{ video.video }}" frameborder="0" allowfullscreen id="video1-{{video.id}}"></iframe>
@@ -58,6 +67,8 @@
     <br>
 
     {% endfor %}
+
+    </div>
 
    </body>
 </html>

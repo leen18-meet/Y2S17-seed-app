@@ -20,6 +20,8 @@
     <img src="/static/img/bird.png" alt="logo" style="width:100px; height: 100px;">
     </div>
 
+    <strong>_______________________________________________________________________________________________________________________________________________________________________</strong>
+
   <div class="explain">  
   <h4>
     
@@ -36,12 +38,13 @@
 
   <br>
   Video Url: <input type="text" name="video"><br><br>
-  Description: <input type="text" name="description">
+  Description: <input type="text" name="description"><br><br>
   <input type="submit" src="{{url_for('static', filename='img/orangebutton.jpg')}}" alt="post video" width="48" height="48"> 
+  <a href="{{url_for('homepage', user_id=user_id)}}"><button>back</button></a>
 
 
   </form>
-  <a href="{{url_for('homepage', user_id=user_id)}}"><button>back</button></a>
+  
   
 
   </body>
