@@ -104,6 +104,7 @@ h1 {
 
 div.videos {
 
+    display : inline;
 
 }
 
@@ -125,3 +126,5 @@ div.videos {
     left: 700px;
     top: 200px;
 }
+
+

@@ -70,12 +70,14 @@ def login():
 def homepage(user_id):
 
     #Publishing on the feed all the videos and also saving the user (NOTE : there is a need?)
-
     user = session.query(User).filter_by(id = user_id).first()
+    videos = session.query(Video).filter_by(publish = True).all()
+    owners = {}
 
-    videos = session.query(Video).all()
+    for video in videos:
+        owners[video.video] = session.query(User).filter_by(id = video.owner).first().name       
 
-    return render_template('homepage.html', user_id = user.id, videos = videos)
+    return render_template('homepage.html', user_id = user.id, videos = videos, owners=owners)
 
 @app.route('/profile/<int:user_id>')
 def profile(user_id):
@@ -122,14 +124,14 @@ def publish(user_id):
             return redirect(url_for('homepage',user_id = user_id))
 
 
-@app.route('/Add/<int:user_id>/<int:video_id>', methods=['GET','POST'])
+@app.route('/add/<int:user_id>/<int:video_id>', methods=['GET','POST'])
 def add(user_id, video_id):
 
     #Taking the old video ti present it to the user and also to mention the video last publisher to post it
     #Interactivly
 
     user = session.query(User).filter_by(id = user_id).first()
-    video = session.query(Video).filter_by(id = video_id).first()
+    curr_video = session.query(Video).filter_by(id = video_id).first()
 
     if request.method == 'GET':
         return render_template('add.html', user_id = user_id, video_id = video_id)
@@ -140,17 +142,16 @@ def add(user_id, video_id):
         video         = request.form.get('video')
         description   = request.form.get('description')
 
-        rating        = request.form.get('rating')
         owner         = user.id
 
-        other_video = video.id
-        publish = false        
+        curr_video.other_video = video
+        publish = False        
 
-        new_vid = Videos(video = video, description = description, publish = publish, other_video = other_video, rating = rating, owner = owner)
+        new_vid = Video(video = video, description = description, publish = publish, owner = owner)
         session.add(new_vid)
         session.commit()
 
-        return redirect_url('homepage',user_id = user_id)
+        return redirect(url_for('homepage',user_id = user_id))
 
 
 

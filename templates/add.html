@@ -18,9 +18,10 @@
     <li>copy the link that will appear on your screen and paste it in the 'Enter Url' </li>
     <li>add discribtion if needed</li>
   </ol> 
-    <form class="discribtion">
+     <form action="{{ url_for('add', user_id = user_id,video_id=video_id)}}" method="post" class="video_informantion">
      Enter Url: <input type = "text" name = "video"><br><br>
      Add Discribtion: <input type = "text" name = "description"><br><br>
-     <button>Add Video</button>
+     <input type="submit" src="{{url_for('static', filename='img/orangebutton.jpg')}}" alt="post video" width="48" height="48"> 
     </form>
+    <a href="{{url_for('homepage', user_id=user_id)}}"><button>back</button></a>
   </body>

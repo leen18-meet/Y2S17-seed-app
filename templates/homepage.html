@@ -35,21 +35,21 @@
     
     {% for video in videos %}
 
+    Owner: {{owners[video.video]}}
+    <br>
+    Description: {{video.description}}
+
     <div class ="videos">
 
-    <iframe width="300" height="300" src="{{ video.video }}" frameborder="0" allowfullscreen></iframe><br>
-
-    {{video.description}}
-
+    <iframe width="300" height="300" src="{{ video.video }}" frameborder="0" allowfullscreen></iframe>
+    {%if video.other_video %}
+    <iframe width="300" height="300" src="{{ video.other_video }}" frameborder="0" allowfullscreen>
+    </iframe><br>
     </div>
-
+    {%endif%}
+    <br><a href="/add/{{user_id}}/{{video.id}}">add</a>
+    <br><br><br>
     {% endfor %}
-
-    <div class="bird">
-    <img src="/static/img/bird.png" alt="logo" style="width:100px; height: 100px;">
-    </div>
-
-
 
    </body>
 </html>
