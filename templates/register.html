@@ -14,34 +14,43 @@
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </head>
   <body>
-   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/<img src="{{url_for('static', filename='img/mument_new.jpg')}}" alt="image" width="200" height="100">/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+   
+      <div class="buttons">
+      <div class="imgname">
+       <img src="/static/img/name.png" alt="name" style="width:200px;height:35px;""> 
+      </div>   
+      </div>
 
-   <br><br><br>
+      <div class="logo">
+       <img src="/static/img/LOGO.png" alt="logo" style="width:130px;height:120px;""><br></div>
+     
+
+   <br><br><br><br><br><br>
 
         <form action="{{ url_for('register')}}" method="post">
 
      <div class="input">
 
 
-     <h4><mark><strong>full name  </strong></mark><input type="text" name="fullname"></h4> 
+     <h4><strong>full name  </strong><input type="text" name="fullname"></h4> 
 
-     <h4><mark><strong>user name </strong></mark> <input type="text" name="username"></h4>
+     <h4><strong>user name </strong> <input type="text" name="username"></h4>
 
-     <h4><mark><strong>password </strong></mark> <input type="password" name="password"></h4>
+     <h4><strong>password </strong> <input type="password" name="password"></h4>
 
-     <h4><mark><strong>email</strong></mark>  <input type="text" name="email"></h4>
+     <h4><strong>email</strong>  <input type="text" name="email"></h4>
 
-     <h4><mark><strong>country</strong></mark> <select>  
+     <h4><strong>country</strong> <select>  
        <option>Israel</option>
        <option>Palestine</option>
        <option>USA</option>
        </select> </h4>
 
-       <h4><mark><strong><h5>-musician-</h5></strong></mark>
-      <input type="checkbox" name="musician" value="sing"><mark><strong> sing</strong></mark><br>
-      <input type="checkbox" name="musician" value="guitar" ><mark><strong>guitar</strong></mark><br>
-      <input type="checkbox" name="musician" value="drums"> <mark><strong>drums</strong></mark><br>
-      <input type="checkbox" name="musician" value="flute" ><mark><strong>flute</strong></mark></h4>
+       <strong><h5>-musician-</h5></strong>
+      <input type="checkbox" name="musician" value="sing"><strong> sing</strong><br>
+      <input type="checkbox" name="musician" value="guitar" ><strong>guitar</strong><br>
+      <input type="checkbox" name="musician" value="drums"> <strong>drums</strong><br>
+      <input type="checkbox" name="musician" value="flute" ><strong>flute</strong></h4>
       
      
 
@@ -51,8 +60,12 @@
      <input type="submit" name="signup" value="sign up">
 
      
-    </form><br>
+    </form><br><br><br><br>
     <a href="/login">Already have an account?</a>
-     </div>
+
+    
+
+    
+
   </body>
 </html>

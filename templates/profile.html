@@ -9,29 +9,22 @@
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </head>
+
   <body>
-      
-    <div class="buttons">
+
+    <div class="bio_style">
       <div class="imgname">
        <img src="/static/img/name.png" alt="name" style="width:200px;height:35px;""> 
       </div>   
     </div>
 
-      <form action ={{ url_for('login')}} method = "post">
-      
-      <br><br><br><br><br><br><br><br><br><br>
-          <div class = "input">
+    <div class="user_name">    
+    <h2><strong>name : {{user.name}}</strong></h2>
+    </div>
 
-         
-              Username: <input type = "text" name = "check_username"><br><br>
-              Password: <input type = "password" name = "check_password"><br><br>
+    <div class="desc">
+      <h3><strong> {{desc}} </strong></h3>  
+    </div>
 
-              <input type = "submit" name = "Sign In" value = "sign in"> 
-              <a href = "{{url_for('register')}}">Sign Up</a>
-          </div>
-      </form>
 
-     
-      
-  </body>>
-</html>
+  </body>

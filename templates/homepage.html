@@ -10,23 +10,46 @@
   </head>
   <body>
 
-    <h1> MUMENT </h1>
+    
 
 
-    <form action="{{ url_for('homepage', user_id = user_id) }}"> 
+    <form action="{{ url_for('homepage', user_id = user_id) }}" class="buttons"> 
 
-    <div class="buttons">
-      <button>Profile</button> <br><br>
-      <button>log out</button> <br><br><br><br>    
-      <button>publish</button> <br><br>
+      <div class="buttonpr">
+      <a href="/profile/{{user_id}}">profile</a>
+      </div>
+
+      <div class="buttonl"> 
+      <a href="/login">log out</a>
+      </div>
+
+      <div class="buttonpo">
+      <a href="/publish/{{user_id}}">post</a>
+      </div> 
+
+      <div class="imgname">
+       <img src="../static/img/name.png" alt="name" style="width:200px;height:35px;">
+      </div>
+   
+    </form>
+    
+    {% for video in videos %}
+
+    <div class ="videos">
+
+    <iframe width="300" height="300" src="{{ video.video }}" frameborder="0" allowfullscreen></iframe><br>
+
+    {{video.description}}
+
     </div>
 
-    add the video link from the youtyube, after the = tag <input type = "text" name = "add video">
-    <input type = "submit" name = "post_video" value = "post video"> 
-    </form>
-    {% for video in videos %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{  video.video }}" frameborder="0" allowfullscreen></iframe>
     {% endfor %}
+
+    <div class="bird">
+    <img src="/static/img/bird.png" alt="logo" style="width:100px; height: 100px;">
+    </div>
+
+
 
    </body>
 </html>

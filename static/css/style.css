@@ -2,7 +2,7 @@
 body{
 
 
-    background-image: url("background-1622424.jpg")
+    
 }
 
 .input{
@@ -12,35 +12,117 @@ body{
 
 .smallnote {
     position:absolute; 
-    margin-top:400px;
-    margin-left:200px;
+    left: 900px;
+    top: 500px;
 }
 
 
 .bignote {
     position:absolute; 
-    margin-top:150px;
-    margin-left:150px;
+    left: 1000px;
+    top: 450px;
 }
 
-.smallnote1 {
+.notes {
     position:absolute; 
-    margin-top:300px;
-    margin-left:1000px;
-}
-
-.bignote1 {
-    position:absolute; 
-    margin-top:50px;
-    margin-left:1050px;
-}
-
-.smallnote2 {
-    position:absolute; 
-    margin-top:35px;
-    margin-left:350px;
+    left: 800px;
+    top: 350px;
 }
 
 h1 {
  text-align: center; 
+}
+
+.bio_style{
+   position: static;
+    top: 0px;
+    left: 0px;
+    width: 1300px;
+    height: 265px;
+    background-image: url("background-1622424.jpg");
+} 
+
+
+.buttons {
+    position: static;
+    top: 0px;
+    left: 0px;
+    width: 1300px;
+    height: 65px;
+    background-image: url("background-1622424.jpg");
+}
+
+
+.buttonpr{
+
+    background-color: #fbc677;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 65px;
+    height: 35px;
+    border: 3px solid #fbc677;
+
+}
+
+.buttonl{
+    background-color: #fbc677;
+    position: absolute;
+    top: 20px;
+    left: 105px;
+    width: 65px;
+    height: 35px;
+    border: 3px solid #fbc677;
+}
+
+.buttonpo{
+    background-color: #fbc677;
+    position: absolute;
+    top: 20px;
+    left: 190px;
+    width: 65px;
+    height: 35px;
+    border: 3px solid #fbc677;
+}
+
+.imgname{
+    position: absolute;
+    left: 580px;
+    top: 20px;
+}
+
+.bird{
+    position: absolute;
+    left: 80px;
+    top: 520px;
+}
+
+.logo{
+    position: absolute;
+    left: 80px;
+    top: 500px;
+}
+
+div.videos {
+
+
+}
+
+.user_name{
+    position: absolute;
+    background-color: white;
+    top: 140px;
+    left: 190px;
+}
+
+.explain{
+    position: absolute;
+    left: 150px;
+    top: 200px;
+}
+
+.video_informantion{
+    position: absolute;
+    left: 700px;
+    top: 200px;
 }
