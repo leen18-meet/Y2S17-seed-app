@@ -41,14 +41,22 @@
 
     <div class ="videos">
 
-    <iframe width="300" height="300" src="{{ video.video }}" frameborder="0" allowfullscreen></iframe>
+    <iframe width="300" height="300" src="{{ video.video }}" frameborder="0" allowfullscreen id="video1-{{video.id}}"></iframe>
     {%if video.other_video %}
-    <iframe width="300" height="300" src="{{ video.other_video }}" frameborder="0" allowfullscreen>
+    <iframe width="300" height="300" src="{{ video.other_video }}" frameborder="0" allowfullscreen id="video2-{{video.id}}">
     </iframe><br>
+    <button id="playbutton{{video.id}}">Play both videos</button>
+    <script>$('#playbutton{{video.id}}').click(function(ev){
+      $("#video1-{{video.id}}")[0].src += "?&autoplay=1";
+      $("#video2-{{video.id}}")[0].src += "?&autoplay=1";
+      ev.preventDefault();
+    })</script>
     </div>
     {%endif%}
     <br><a href="/add/{{user_id}}/{{video.id}}">add</a>
     <br><br><br>
+    <br>
+
     {% endfor %}
 
    </body>
