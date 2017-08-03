@@ -70,17 +70,19 @@ def login():
 def homepage(user_id):
 
     #Publishing on the feed all the videos and also saving the user (NOTE : there is a need?)
+
     user = session.query(User).filter_by(id = user_id).first()
 
     videos = session.query(Video).all()
 
-    return render_template('homepage.html', user_id = user.id, vidoes = videos)
+    return render_template('homepage.html', user_id = user.id, videos = videos)
 
 @app.route('/profile/<int:user_id>')
 def profile(user_id):
 
     #Showing the whole videos of the current user and showing all the info about him.
     user = session.query(User).filter_by(id = user_id).first()
+    
     roles = []
     if user.sing:
         roles.append("Singer")
@@ -101,24 +103,23 @@ def publish(user_id):
     user = session.query(User).filter_by(id = user_id).first()
 
     if request.method == 'GET':
-        return render_template('publish.html', user = user)
+        return render_template('post.html', user_id = user_id)
 
     #Creare new video to publish
     else:
         video         = request.form.get('video')
         description   = request.form.get('description')
 
-        rating        = request.form.get('rating')
         owner         = user_id
 
         if video in videos:
-            return redirect_url('publish',user_id = user_id)
+            return redirect('publish',user_id = user_id)
         else:    
-            new_vid = video(video = video, description = description, rating = rating, owner = owner)
+            new_vid = Video(video = video, description = description, owner = owner)
             session.add(new_vid)
             session.commit()
 
-            return redirect_url('homepage',user_id = user_id)
+            return redirect(url_for('homepage',user_id = user_id))
 
 
 @app.route('/Add/<int:user_id>/<int:video_id>', methods=['GET','POST'])
